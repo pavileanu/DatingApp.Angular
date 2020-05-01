@@ -3,6 +3,7 @@ import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../_models/user';
+import { AuthService } from './auth.service';
 
 
 @Injectable({
@@ -12,7 +13,7 @@ import { User } from '../_models/user';
 export class UserService {
   baseUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authService: AuthService) { }
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.baseUrl + 'users');
@@ -22,4 +23,8 @@ export class UserService {
     return this.http.get<User>(this.baseUrl + 'users/' + id);
   }
 
+  updateUser(id: number, user: User): Observable<User> {
+    return this.http.put<User>(this.baseUrl + 'users/' + id, user);
+  }
+  
 }
