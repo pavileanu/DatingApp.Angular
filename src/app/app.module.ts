@@ -27,6 +27,7 @@ import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberUsersResolver } from './_resolvers/member-users.resolver';
 import { MemberEditResolver } from './_resolvers/member-edit.resover';
 import { PreventUnsaved } from './_guards/prevent-unsaved.guard';
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 
 
 export function tokenGetter(){
@@ -52,7 +53,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
       MessagesComponent,
       MemberCardComponent,
       MemberDetailsComponent,
-      MemberEditComponent
+      MemberEditComponent,
+      PhotoEditorComponent
    ],
    imports: [
       BrowserModule,
