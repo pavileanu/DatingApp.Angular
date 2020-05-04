@@ -33,6 +33,8 @@ import { MemberEditResolver } from './_resolvers/member-edit.resover';
 import { PreventUnsaved } from './_guards/prevent-unsaved.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { ListResolver } from './_resolvers/list.resolver';
+import { MessagesResolver } from './_resolvers/messages.resolver';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 
 
@@ -61,7 +63,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
       MemberCardComponent,
       MemberDetailsComponent,
       MemberEditComponent,
-      PhotoEditorComponent
+      PhotoEditorComponent,
+      MemberMessagesComponent
    ],
    imports: [
       BrowserModule,
@@ -91,6 +94,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
       MemberDetailResolver,
       MemberUsersResolver,
       MemberEditResolver,
+      MessagesResolver,
       ListResolver,
       PreventUnsaved,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
